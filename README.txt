@@ -1,9 +1,8 @@
-Crystal Kizor — latest website
+Crystal Kizor — brand hierarchy refinement
+Static site: open index.html or run python3 -m http.server 4173 from this folder.
 
-Open index.html, or serve this folder with:
-python3 -m http.server 4173
-Then visit http://localhost:4173
+Preserved visual style. Three areas: Spaces & objects; Knowledge & ideas; People & purpose. Founder slideshow: five seconds, with pause/reduced-motion support.
 
-Upload this folder contents to any static web host.
+Verified source destinations: https://studiocoka.com/ ; https://studiocoka.com/studio ; https://www.tedxportharcourt.com/speakers/a01411ad-22eb-4e92-9f94-6867a1f1446b ; https://ng.linkedin.com/in/crystal-kizor ; linked public articles in page.
 
-Send enquiry opens an email draft. A recipient address is not yet configured. Set window.CRYSTAL_CONTACT_EMAIL in script.js to the approved recipient email before launch. No backend delivery is configured.
+Release limits: ELEvated product photos/shop and direct initiative participation destinations are not verified. Stock furniture is explicitly marked. Personal contact routes to LinkedIn; no approved personal inbox or backend email delivery exists. Positioning is proposed brand copy. Project images are studio portfolio references, not claims of individual authorship or completed construction. No numeric Lighthouse score claimed.
