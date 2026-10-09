@@ -151,3 +151,14 @@ header .menu{display:none}
 #introduction .architectural-sketch{width:min(100%,360px);margin:24px 0 0 auto;pointer-events:none}
 #introduction .architectural-sketch img{display:block;width:100%;height:auto;object-fit:contain}
 @media(max-width:700px){#introduction .architectural-sketch{width:min(85%,300px);margin-top:20px}}
+
+/* Architectural study beside Alive and Free. */
+#purpose .purpose-cards{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(220px,.8fr);gap:32px;align-items:center}
+#purpose .alive-sketch{margin:0;justify-self:center;width:min(100%,280px);padding:12px 0;background:transparent}
+#purpose .alive-sketch img{display:block;width:100%;height:auto;object-fit:contain}
+#purpose .alive-sketch figcaption{position:static;color:#65695e;background:none;padding:12px 0 0;text-align:center;font-size:9px;line-height:1.6;letter-spacing:.12em}
+/* Orange replaces dark fills on primary actions throughout the site. */
+.pill,.knowledge-button,.intent-routes>button,.connect-actions button,#main-navigation .contact-link,header .menu[aria-expanded="true"],.speaking-actions .knowledge-button{background:var(--orange);color:var(--ink);border-color:var(--orange)}
+.pill:hover,.knowledge-button:hover,.intent-routes>button:hover,.connect-actions button:hover,#main-navigation .contact-link:hover,#main-navigation .contact-link[aria-current="location"]{background:#ff764f;color:var(--ink);border-color:#ff764f}
+#connect .intent-routes>button{border:1px solid #17171566;box-shadow:0 3px 0 #17171518}
+@media(max-width:700px){#purpose .purpose-cards{grid-template-columns:1fr;gap:20px}#purpose .alive-sketch{width:210px}}
