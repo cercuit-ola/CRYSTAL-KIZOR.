@@ -162,3 +162,20 @@ header .menu{display:none}
 .pill:hover,.knowledge-button:hover,.intent-routes>button:hover,.connect-actions button:hover,#main-navigation .contact-link:hover,#main-navigation .contact-link[aria-current="location"]{background:#ff764f;color:var(--ink);border-color:#ff764f}
 #connect .intent-routes>button{border:1px solid #17171566;box-shadow:0 3px 0 #17171518}
 @media(max-width:700px){#purpose .purpose-cards{grid-template-columns:1fr;gap:20px}#purpose .alive-sketch{width:210px}}
+
+/* Balance the community feature across the available section width. */
+#purpose .purpose-cards{max-width:1100px;width:100%;margin:60px auto 0;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(28px,5vw,76px);align-items:center}
+#purpose #alive{padding:clamp(26px,3vw,44px)}
+#purpose .alive-sketch{width:min(100%,300px);padding:0;justify-self:center}
+#connect .intent-routes>button{background:#171715;color:#fff;border:1px solid #171715;box-shadow:none}
+#connect .intent-routes>button:hover{background:#343430;color:#fff}
+footer{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding:32px 5%}
+footer .logo{justify-self:start}
+footer .footer-content{width:auto;text-align:center}
+footer .footer-socials{display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:center;align-items:center;gap:12px;margin:0 0 16px}
+footer .footer-socials>a,footer .footer-socials>button{display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;padding:0;margin:0;border:1px solid #ffffff38;border-radius:50%;background:transparent;color:#fff}
+footer .footer-socials svg{display:block;width:22px;height:22px}
+footer .footer-socials>a:hover,footer .footer-socials>button:hover{color:#ff764f;border-color:#ff764f}
+footer .footer-content>p{font-size:11px;color:#bcbcb4;line-height:1.6}
+footer .footer-top{justify-self:end;font-size:11px}
+@media(max-width:700px){#purpose .purpose-cards{grid-template-columns:1fr;margin-top:35px;gap:24px}#purpose .alive-sketch{width:210px}footer{grid-template-columns:1fr 1fr;gap:24px}footer .footer-content{grid-column:1/-1;grid-row:2;justify-self:center}footer .footer-top{grid-column:2;grid-row:1}footer .footer-socials{gap:16px}}
