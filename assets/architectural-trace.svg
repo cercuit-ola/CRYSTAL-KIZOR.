@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 180" fill="none">
+<style>
+.trace{stroke:#55594c;stroke-width:1.15;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 8s ease-in-out infinite}
+.guide{stroke:#8c9080;stroke-width:.65;opacity:.4}
+.detail{stroke-width:.7;stroke:#7b806f}
+@keyframes draw{0%{stroke-dashoffset:1;opacity:0}8%{opacity:.8}62.5%,78%{stroke-dashoffset:0;opacity:.8}90%,100%{stroke-dashoffset:0;opacity:0}}
+@media(prefers-reduced-motion:reduce){.trace{animation:none;stroke-dashoffset:0;opacity:.65}}
+</style>
+<g class="guide"><path d="M23 157H397M70 19V164M350 19V164M40 39H385"/><path d="m20 153 8 8m365-8 8 8M66 22h8M346 22h8"/></g>
+<path class="trace" pathLength="1" d="M43 40 369 30 385 35 364 51 66 58 43 40ZM66 58 364 51M45 43 66 62 363 55 385 35M92 61 87 149 110 151 123 60M102 62 99 144M174 59 168 149 193 150 205 58M187 61 182 144M260 57 257 149 283 149 291 56M273 60 269 144M79 153 302 153"/>
+<path class="trace detail" pathLength="1" d="m90 79 30-1m-31 18 28-1m-29 18 26-1m-27 18 25-1m61-53 28-1m-29 18 27-1m-28 18 26-1m-27 18 25-1m65-53 29-1m-29 18 27-1m-27 18 26-1m-26 18 24-1M64 45 363 36M73 47 356 39M97 36l2-9 3 9m41-2 2-10 4 10m53-2 2-9 4 9m55-2 2-9 3 9m51-2 2-9 4 9"/>
+</svg>
