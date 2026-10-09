@@ -1,0 +1,17 @@
+import { readFileSync, existsSync } from 'node:fs';
+import assert from 'node:assert/strict';
+const html = readFileSync('out/index.html', 'utf8');
+const original = readFileSync('index.html', 'utf8');
+const ids = [...original.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
+for (const id of ids) assert(html.includes(`id="${id}"`), `Missing section/control: ${id}`);
+for (const src of [...html.matchAll(/<img[^>]+src="([^"]+)"/g)].map(m=>m[1])) assert(existsSync(`out/${src.replace(/^\//,'')}`), `Missing image: ${src}`);
+assert.equal((html.match(/class="education-slide"/g)||[]).length, 2);
+assert.equal((html.match(/class="founder-slide(?: active)?"/g)||[]).length, 5);
+assert.equal((html.match(/class="work-tile"/g)||[]).length, 5);
+assert(!html.includes('ako-learning.webp'));
+assert(!html.includes('class="brand-index"'));
+assert(existsSync('out/portfolio.js'));
+assert(existsSync('out/robots.txt'));
+assert(existsSync('out/sitemap.xml'));
+assert(readFileSync('out/portfolio.js','utf8').includes('founderDelay=2500'));
+console.log('Export parity checks passed: section IDs, images, galleries, compact cards, footer and interaction script.');
