@@ -72,3 +72,35 @@ h1,h2{font-weight:700;line-height:1.12;letter-spacing:-.045em}h3,h4{line-height:
 .founder-introduction p + p,.intro-copy p + p{margin-top:20px}.hero-description p{font-size:clamp(21px,2.2vw,30px);line-height:1.35}.hero-actions button{background:transparent;border:0;font:inherit;text-align:left;cursor:pointer}.portfolio-description h3,.learning-copy h4,.purpose-cards h4,.speaking-panel h4,.research-copy h4{font-size:22px;line-height:1.4;margin:0 0 18px}.research-copy{max-width:780px;margin-bottom:30px}.research-copy p,.collaboration-copy p{font-size:17px;line-height:1.8;margin:18px 0}.supplied-copy .intro-copy{max-width:800px}.supplied-copy .intro-copy p{max-width:none}.supplied-copy h2{font-size:clamp(32px,4.4vw,64px);line-height:1.15}.collaboration-copy{max-width:760px}.connect h2{font-size:clamp(40px,6vw,86px);max-width:1000px}.closing .pill{margin-top:24px}.footer-content{flex:1;min-width:0}.footer-links{display:flex;flex-wrap:wrap;gap:12px 20px;margin:20px 0;font-size:13px;line-height:1.8}.footer-links button{font:inherit;color:inherit;background:transparent;border:0;padding:0;cursor:pointer}.footer-content>p{line-height:1.8}#brands{scroll-margin-top:110px;flex-wrap:wrap}.work-links{grid-template-columns:repeat(4,minmax(0,1fr))}.purpose-cards button{background:transparent;border:0;color:inherit;font:inherit;cursor:pointer}.founder-introduction{max-width:640px}.hero-reoriented .founder-introduction p{font-size:16px;line-height:1.75}
 @media(max-width:1000px){.work-links{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:600px){.work-links{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-content{width:100%}.hero-reoriented .founder-introduction p{font-size:16px}.supplied-copy h2{font-size:34px}}
+
+/* Selected work: seven linked cards in an asymmetric bento grid. */
+#work{padding:64px 5% 72px;background:#f3f3ec}
+#work .work-directory-heading{display:grid;grid-template-columns:1fr 2fr;align-items:start;gap:36px;margin-bottom:32px}
+#work .work-directory-heading .tiny{padding-top:10px;line-height:1.7}
+#work .work-directory-heading h2{max-width:850px;margin:0;font-size:clamp(28px,3.3vw,48px);line-height:1.13;letter-spacing:-.045em}
+#work .work-links{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,minmax(220px,auto)) minmax(210px,auto);gap:16px}
+#work .work-tile{isolation:isolate;overflow:hidden;display:flex;flex-direction:column;align-items:stretch;justify-content:space-between;gap:42px;padding:28px;border:1px solid #dedfd5;border-radius:24px;min-height:0;background:#fff;color:#171715;transition:transform .22s ease,box-shadow .22s ease}
+#work .work-tile-number{color:inherit;opacity:.7;font-size:12px;letter-spacing:.12em}
+#work .work-tile>div{position:relative;z-index:1;max-width:95%}
+#work .work-tile h3{font-size:clamp(21px,2vw,29px);line-height:1.15;letter-spacing:-.035em;margin:0 0 12px;text-wrap:balance}
+#work .work-tile p{font-size:14px;line-height:1.6;color:inherit;opacity:.8;margin:0;max-width:340px}
+#work .work-tile-arrow{top:20px;right:20px;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#1717150b;color:inherit;font-size:23px;transition:transform .22s ease}
+#work .work-tile:nth-child(1){grid-column:span 2;grid-row:span 2;background:#262d25 url('/assets/coka-garden.webp') center/cover;color:#fff;border-color:transparent;padding:32px}
+#work .work-tile:nth-child(1)::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,19,13,.36),rgba(10,19,13,.06) 30%,rgba(10,19,13,.88) 100%)}
+#work .work-tile:nth-child(1) h3{font-size:clamp(36px,4.5vw,62px);letter-spacing:-.05em}
+#work .work-tile:nth-child(1) p{font-size:16px;opacity:1;max-width:370px}
+#work .work-tile:nth-child(1) .work-tile-arrow{background:#ffffff26}
+#work .work-tile:nth-child(2){background:#e8dfcf}
+#work .work-tile:nth-child(3){background:#bdcba9}
+#work .work-tile:nth-child(4){background:#232720;color:#f8f8ef;border-color:#232720}
+#work .work-tile:nth-child(4) .work-tile-arrow{background:#ffffff15}
+#work .work-tile:nth-child(5){background:#eeeae2}
+#work .work-tile:nth-child(6){grid-column:span 2;background:#ff764f;border-color:#ff764f}
+#work .work-tile:nth-child(7){grid-column:span 2;background:#fff}
+#work .work-tile:nth-child(n+6) h3{font-size:clamp(25px,2.6vw,36px)}
+#work .work-tile:hover{transform:translateY(-4px);box-shadow:0 12px 24px #17171512}
+#work .work-tile:hover .work-tile-arrow{transform:rotate(45deg)}
+#work .work-tile:focus-visible{outline:3px solid #171715;outline-offset:5px}
+@media(max-width:1000px){#work .work-links{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:minmax(215px,auto)}#work .work-tile:nth-child(1){grid-row:auto;min-height:380px}#work .work-tile:nth-child(n+6){grid-column:span 1}#work .work-directory-heading{grid-template-columns:1fr;gap:14px}#work .work-directory-heading h2{max-width:720px}}
+@media(max-width:600px){#work{padding:40px 5% 44px}#work .work-directory-heading{margin-bottom:24px}#work .work-links{grid-template-columns:1fr;gap:12px;grid-auto-rows:auto}#work .work-tile,#work .work-tile:nth-child(n){grid-column:auto;grid-row:auto;min-height:200px;padding:24px;gap:38px;border-radius:20px;flex-direction:column;align-items:stretch}#work .work-tile:nth-child(1){min-height:370px}#work .work-tile h3,#work .work-tile:nth-child(n+6) h3{font-size:27px}#work .work-tile:nth-child(1) h3{font-size:44px}#work .work-tile p{font-size:14px}#work .work-tile:last-child h3{margin-bottom:12px}}
+@media(prefers-reduced-motion:reduce){#work .work-tile,#work .work-tile-arrow{transition:none}#work .work-tile:hover,#work .work-tile:hover .work-tile-arrow{transform:none}}
