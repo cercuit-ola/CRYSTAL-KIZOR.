@@ -29,3 +29,37 @@ const architectureImages=[...document.querySelectorAll('.architecture-images img
 function flipArchitecture(step){architectureIndex=(architectureIndex+step+architectureImages.length)%architectureImages.length;architectureImages.forEach((img,i)=>{img.classList.toggle('current',i===architectureIndex);img.setAttribute('aria-hidden',String(i!==architectureIndex))});const projectInfo=[['International Event Center','Enugu, Nigeria · Civic / cultural · 2024'],['Garden Home','Kigali, Rwanda · Residential'],['Pine Towers','Enugu, Nigeria · Mixed-use residential and commercial']][architectureIndex];document.querySelector('#project-name').textContent=projectInfo[0];document.querySelector('#project-description').textContent=projectInfo[1];document.querySelector('.architecture-count').textContent=String(architectureIndex+1).padStart(2,'0')+' / 03'}
 document.querySelector('.architecture-prev').onclick=()=>flipArchitecture(-1);document.querySelector('.architecture-next').onclick=()=>flipArchitecture(1);
 let architectureTouchX=null;const gallery=document.querySelector('.architecture-gallery');gallery.addEventListener('touchstart',e=>architectureTouchX=e.changedTouches[0].clientX,{passive:true});gallery.addEventListener('touchend',e=>{if(architectureTouchX!==null){const delta=e.changedTouches[0].clientX-architectureTouchX;if(Math.abs(delta)>60)flipArchitecture(delta<0?1:-1)}architectureTouchX=null},{passive:true});
+
+// Keep navigation state consistent across keyboard, pointer and screen sizes.
+function closeNavigation(returnFocus=false){
+  nav.classList.remove('open');
+  menu.setAttribute('aria-expanded','false');
+  menu.setAttribute('aria-label','Open navigation');
+  menu.textContent='☰';
+  if(returnFocus)menu.focus();
+}
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape'&&nav.classList.contains('open'))closeNavigation(true);
+});
+document.addEventListener('click',event=>{
+  if(!event.target.closest('header'))closeNavigation();
+});
+matchMedia('(max-width:1100px)').addEventListener('change',()=>closeNavigation());
+nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+  if(getComputedStyle(menu).display==='none')return;
+  const destination=document.querySelector(link.getAttribute('href'));
+  if(destination){destination.setAttribute('tabindex','-1');destination.focus({preventScroll:true});}
+}));
+const navigationLinks=[...nav.querySelectorAll('a[href^="#"]')];
+const navigationSections=navigationLinks.map(link=>document.querySelector(link.getAttribute('href')));
+let navigationFrame=false;
+function updateCurrentSection(){
+  navigationFrame=false;
+  let current=-1;
+  navigationSections.forEach((section,index)=>{if(section.getBoundingClientRect().top<=150)current=index;});
+  if(innerHeight+scrollY>=document.documentElement.scrollHeight-8)current=navigationSections.length-1;
+  navigationLinks.forEach((link,index)=>{if(index===current)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});
+}
+addEventListener('scroll',()=>{if(!navigationFrame){navigationFrame=true;requestAnimationFrame(updateCurrentSection);}},{passive:true});
+addEventListener('resize',updateCurrentSection);
+updateCurrentSection();
